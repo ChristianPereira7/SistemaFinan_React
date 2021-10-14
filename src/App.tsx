@@ -8,6 +8,7 @@ import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from './Components/TableArea';
 
 
+
 const App = () => {
 
     const [list, setList] = useState(items);
