@@ -7,6 +7,7 @@ import { items } from './data/items';
 import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from './Components/TableArea';
 import { InfoArea } from './Components/InfoArea';
+import { InputArea } from './Components/InputArea';
 
 
 
@@ -47,6 +48,12 @@ const App = () => {
       setCurrentMonth(newMonth);
     }
 
+    const handleAddItem = (item: Item) => {
+      let newList = [...list];
+      newList.push(item);
+      setList(newList);
+    }
+
 
 
     return(
@@ -66,6 +73,8 @@ const App = () => {
             />
 
            {/* Área de insercão */}
+
+           <InputArea onAdd={handleAddItem}/>
 
             <TableArea list={filteredList}/>
 
