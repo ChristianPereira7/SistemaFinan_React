@@ -6,6 +6,7 @@ import { categories } from './data/categories';
 import { items } from './data/items';
 import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 import { TableArea } from './Components/TableArea';
+import { InfoArea } from './Components/InfoArea';
 
 
 
@@ -20,7 +21,12 @@ const App = () => {
 
       setFilteredList(filterListByMonth(list, currentMonth));
 
-    }, [list, currentMonth])
+    }, [list, currentMonth]);
+
+
+    const handleMonthChange = (newMonth: string) => {
+      setCurrentMonth(newMonth);
+    }
 
 
 
@@ -33,7 +39,10 @@ const App = () => {
           
           {/* Área de informações */}
 
-
+            <InfoArea 
+            currentMonth={currentMonth}
+            onMonthChange={handleMonthChange}
+            />
 
            {/* Área de insercão */}
 
