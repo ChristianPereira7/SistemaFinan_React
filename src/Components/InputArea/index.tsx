@@ -9,10 +9,10 @@ export const InputArea = ({onAdd}: Props) => {
 
     const handleAddEvent = () => {
         let newItem: Item = {
-            date: new Date(2021, 9, 20), 
-            category: 'food',
-            title: 'Item de teste',
-            value: 250.50
+            date: new Date(dateField),
+            category: categoryField,
+            title: titleField,
+            value: valueField
         };      
         onAdd(newItem);
     }
